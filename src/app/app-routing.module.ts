@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SingleButtonFormComponent } from './single-button-form/single-button-form.component';
+import { AuthNoteComponent } from './auth-note/auth-note.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,20 @@ const routes: Routes = [
         id: 'auth-btn',
         on: 'Login'
       }
+    }
+  },
+  {
+    path: 'login',
+    component: AuthNoteComponent,
+    data: {
+      note: 'Preparing to login and authorize with Pocket...'
+    }
+  },
+  {
+    path: 'auth',
+    component: AuthNoteComponent,
+    data: {
+      note: 'Logging in and requesting access...'
     }
   },
   {
