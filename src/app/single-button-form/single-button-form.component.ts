@@ -9,9 +9,11 @@ import { ActivatedRoute } from '@angular/router';
       <label for="{{ buttonText.id }}">
         {{ buttonText.labeling }}
       </label>
-      <button type="button" id="{{ buttonText.id }}">
-        {{ buttonText.on }}
-      </button>
+      <a href="{{ dest }}">
+        <button type="button" id="{{ buttonText.id }}">
+          {{ buttonText.on }}
+        </button>
+      </a>
     </form>
   `,
   styleUrls: ['./single-button-form.component.css']
@@ -23,9 +25,12 @@ export class SingleButtonFormComponent {
     on: 'words on button'
   };
 
+  dest: string = '#';
+
   route: ActivatedRoute = inject(ActivatedRoute);
 
   constructor() {
     this.buttonText = this.route.snapshot.data['buttonText'];
+    this.dest = this.route.snapshot.data['dest'];
   }
 }
