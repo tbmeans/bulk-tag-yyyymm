@@ -12,7 +12,8 @@ const routes: Routes = [
         labeling: 'Connect with Pocket to get started!',
         id: 'auth-btn',
         on: 'Login'
-      }
+      },
+      dest: 'login'
     }
   },
   {
@@ -37,9 +38,17 @@ const routes: Routes = [
         labeling: 'Find most recent saves not tagged YYYYMM',
         id: 'get-btn',
         on: 'Search'
-      }
+      },
+      dest: 'results'
     }
-  }
+  },
+  {
+    path: 'results',
+    component: AuthNoteComponent,
+    data: {
+      note: 'Here\'s your stuff...'
+    }
+  },
 ];
 
 @NgModule({
